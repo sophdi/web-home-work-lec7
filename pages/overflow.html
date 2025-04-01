@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="zxx">
 
 <head>
   <meta charset="UTF-8">
@@ -24,19 +24,20 @@
       background: linear-gradient(135deg, #e9f2ff 0%, #ffe7f2 100%);
       padding: 10px;
     }
-
+    
+    /* Різні типи overflow */
     .overflow-visible {
-      overflow: visible;
+      overflow: visible; 
       border-color: #e91e63;
     }
 
     .overflow-hidden {
-      overflow: hidden;
+      overflow: hidden; /* контент, що не вміщується, буде обрізаний */
       border-color: #2196f3;
     }
 
     .overflow-scroll {
-      overflow: scroll;
+      overflow: scroll; /* будуть завжди показані смуги прокрутки */
       border-color: #4caf50;
     }
 
@@ -47,13 +48,13 @@
 
     .overflow-x-hidden {
       overflow-x: hidden;
-      overflow-y: visible;
+      overflow-y: visible; 
       border-color: #9c27b0;
     }
 
     .overflow-y-scroll {
-      overflow-x: visible;
-      overflow-y: scroll;
+      overflow-x: visible; 
+      overflow-y: scroll; /* завжди показує вертикальну смугу прокрутки */
       border-color: #795548;
     }
   </style>
@@ -72,32 +73,31 @@
       <li><a href="position.html">Позиціонування</a></li>
     </ul>
   </nav>
-
   <h1>Властивість CSS Overflow</h1>
-
   <div class="demo-box">
     <h2>overflow</h2>
-
+    <!-- overflow: visible -->
     <div class="container overflow-visible">
       <p><strong>overflow: visible</strong></p>
       <div class="content">
         Дефолтне значення. Контент просто "вилазить" за межі і видно все. Може накладатись на інші елементи.
       </div>
     </div>
+    <!-- overflow: hidden -->
     <div class="container overflow-hidden">
       <p><strong>overflow: hidden</strong></p>
       <div class="content">
         Все, що не влазить в контейнер, обрізається і стає невидимим. Це може бути корисно для приховування переповненого контенту.
       </div>
     </div>
-
+    <!-- overflow: scroll -->
     <div class="container overflow-scroll">
       <p><strong>overflow: scroll</strong></p>
       <div class="content">
         Завжди показує смуги прокрутки, навіть якщо контент повністю влазить. Не дуже красиво, але прокрутка гарантована.
       </div>
     </div>
-
+    <!-- overflow: auto -->
     <div class="container overflow-auto">
       <p><strong>overflow: auto</strong></p>
       <div class="content">
@@ -105,17 +105,16 @@
       </div>
     </div>
   </div>
-
   <div class="demo-box">
     <h2>overflow-x і overflow-y</h2>
-
+    <!-- overflow-x: hidden, overflow-y: visible -->
     <div class="container overflow-x-hidden">
       <p><strong>overflow-x: hidden, overflow-y: visible</strong></p>
       <div class="content">
         Горизонтальне переповнення приховано, вертикальне - видиме.
       </div>
     </div>
-
+    <!-- overflow-x: visible, overflow-y: scroll -->
     <div class="container overflow-y-scroll">
       <p><strong>overflow-x: visible, overflow-y: scroll</strong></p>
       <div class="content">
