@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Позиціонування елементів</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .position-container {
+      position: relative;
+      height: 200px;
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      margin: 10px 0;
+      padding: 10px;
+    }
+
+    /* Box styles */
+    .box {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      margin: 5px;
+      background-color: #ef5522
+    }
+
+    /* Position: static */
+    .static-box {
+      position: static;
+      background-color: #9C27B0;
+    }
+
+    /* Position: relative */
+    .relative-box {
+      position: relative;
+      top: 30px;
+      right: 30px;
+      background-color: #2196F3;
+    }
+
+    /* Position: absolute */
+    .absolute-box {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      background-color: #4CAF50;
+    }
+
+    .layers-container {
+      position: absolute;
+      height: 250px;
+      width: 250px;
+      margin-left: 300px;
+    }
+
+    .layer {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+    }
+
+    .layer-1 {
+      background-color: #ef5350;
+      top: 0;
+      left: 0;
+    }
+
+    .layer-2 {
+      background-color: #42a5f5;
+      top: 50px;
+      left: 50px;
+    }
+
+    .layer-3 {
+      background-color: #66bb6a;
+      top: 100px;
+      left: 100px;
+    }
+
+    /* Position: fixed */
+    .fixed-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #FF5722;
+      z-index: 100;
+    }
+
+    /* Position: sticky */
+    .sticky-container {
+      height: 200px;
+      overflow: auto;
+      border: 1px solid #ddd;
+      margin: 10px 0;
+    }
+
+    .sticky-box {
+      position: sticky;
+      top: 0;
+      background-color: #FFC107;
+      color: black;
+      padding: 10px;
+    }
+
+    .content-section {
+      height: 400px;
+      padding: 10px;
+    }
+
+    /* Z-index demonstration */
+    .z-index-container {
+      position: relative;
+      height: 150px;
+      margin: 20px 0;
+    }
+
+    .z-box {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    .z-box-1 {
+      background-color: rgba(233, 30, 99, 0.8);
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+    }
+
+    .z-box-2 {
+      background-color: rgba(33, 150, 243, 0.8);
+      top: 30px;
+      left: 30px;
+      z-index: 2;
+    }
+
+    .z-box-3 {
+      background-color: rgba(76, 175, 80, 0.8);
+      top: 50px;
+      left: 50px;
+      z-index: 3;
+    }
+
+    /* Fixed vs Sticky Demo */
+    .fixed-sticky-demo {
+      height: 300px;
+      overflow: auto;
+      position: relative;
+      border: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    .fixed-element {
+      position: fixed;
+      width: 150px;
+      height: 40px;
+      background-color: #E91E63;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      bottom: 80px;
+      left: 46px;
+    }
+
+    .sticky-element {
+      position: sticky;
+      top: 0;
+      background-color: #673AB7;
+      color: white;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .demo-content {
+      height: 800px;
+    }
+
+    /* Parent, Middle, Child Box */
+    .parent-box {
+      width: 250px;
+      height: 250px;
+      background-color: #bbdefb;
+      border: 3px solid #1976d2;
+      position: relative;
+      margin: 30px;
+    }
+
+    .middle-box {
+      width: 180px;
+      height: 180px;
+      background-color: #ffcc80;
+      border: 3px solid #f57c00;
+      margin: 30px;
+    }
+
+    .child-box {
+      width: 70px;
+      height: 70px;
+      background-color: #e1bee7;
+      border: 3px solid #7b1fa2;
+      position: absolute;
+      top: 30px;
+      right: 30px;
+    }
+
+    .box-label {
+      color: #000000;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-size: 12px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Навігаційне меню -->
+  <nav>
+    <ul>
+      <li><a href="../index.html">Блокові/Інлайнові</a></li>
+      <li><a href="normalize.html">Normalize</a></li>
+      <li><a href="reset.html">Reset</a></li>
+      <li><a href="display.html">Display</a></li>
+      <li><a href="float.html">Float</a></li>
+      <li><a href="overflow.html">Overflow</a></li>
+      <li><a href="position.html" class="active">Позиціонування</a></li>
+    </ul>
+  </nav>
+
+  <h1>Позиціонування елементів</h1>
+  <!-- Position: Static -->
+  <div class="demo-box">
+    <h2>Position: Static</h2>
+    <div class="position-container" style="display: flex; flex-direction: row;">
+      <div class="box" style="background-color: #2196F3;"></div>
+      <div class="box static-box">position: static</div>
+      <div class="box" style="background-color: #4CAF50;"></div>
+      <div class="box" style="background-color: #FF5722;"></div>
+    </div>
+
+  </div>
+
+  <!-- Position: Relative -->
+  <div class="demo-box">
+    <h2>Position: Relative</h2>
+      <div class="position-container" style="display: flex; flex-direction: row;">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box relative-box">position: relative<br>top: 30px<br>right: 30px;</div>
+        <div class="box"></div>
+    </div>
+  </div>
+
+  <!-- Position: Absolute -->
+  <div class="demo-box">
+    <h2>Position: Absolute</h2>
+    <div class="position-container">
+      <div class="layers-container">
+        <div class="layer layer-1"></div>
+        <div class="layer layer-2"></div>
+        <div class="layer layer-3"></div>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque suscipit nulla sed lobortis. Sed
+        maximus elit nec posuere tempus. Sed ornare, ante quis vulputate efficitur, neque odio pharetra quam, at iaculis
+        sem nunc vitae nunc. Ut ornare pellentesque mollis.Sed venenatis est lacus, vel faucibus mi volutpat ut. Mauris
+        in tempus nulla. Mauris sem arcu, pretium id porttitor a, ullamcorper id tortor. Nam placerat feugiat
+        pellentesque. Donec enim diam, congue ac dui at, efficitur gravida odio. Duis nec mollis nisi. Sed quis erat
+        vestibulum, pulvinar dolor sit amet, mattis quam.In eget convallis odio. Aliquam faucibus convallis nunc, sit
+        amet interdum elit. Nam posuere efficitur lacus. Sed non dui in diam posuere iaculis.</p>
+      <div class="box absolute-box">position: absolute<br>top: 50px<br>left: 50px</div>
+    </div>
+  </div>
+
+  <!-- Position: Relative, Static, Absolute -->
+  <div class="demo-box" style="height: 400px;">
+    <h2>Position: relative, static, absolute</h2>
+    <div class="position-container " style="height: 300px;">
+      <div class="parent-box">
+        <span class="box-label">Position: relative</span>
+        <div class="middle-box">
+          <span class="box-label">Position: static</span>
+          <div class="child-box">
+            <span class="box-label">Position: absolute</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Position: Fixed -->
+  <div class="demo-box">
+    <h2>Position: Fixed</h2>
+    <div class="position-container">
+      <p>Елемент з position: fixed позиціонується відносно вікна браузера і залишається на місці при прокрутці.
+      </p>
+      <p>Зверніть увагу на оранжевий блок у правому нижньому куті екрана - це fixed елемент.</p>
+    </div>
+    <div class="box fixed-box">position: fixed<br>bottom: 20px<br>right: 20px</div>
+  </div>
+
+  <!-- Position: Sticky -->
+  <div class="demo-box">
+    <h2>Position: Sticky</h2>
+    <div class="sticky-container">
+      <div class="sticky-box">position: sticky</div>
+      <div class="content-section">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Maecenas feugiat eros id ligula
+          malesuada, ut vulputate mauris gravida.</p>
+        <p>Прокрутіть вниз щоб побачити, як працює sticky позиціонування. Елемент залишається на своєму місці,
+          доки не досягне верхнього краю контейнера, а потім "прилипає" до нього.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Maecenas feugiat eros id
+          ligula malesuada, ut vulputate mauris gravida.</p>
+        <p>Proin eu metus nec felis maximus posuere. Morbi efficitur enim at arcu pellentesque, in tempor nisi
+          pretium.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Maecenas feugiat eros id
+          ligula malesuada, ut vulputate mauris gravida.</p>
+        <p>Proin eu metus nec felis maximus posuere. Morbi efficitur enim at arcu pellentesque, in tempor nisi
+          pretium.</p>
+      </div>
+    </div>
+  </div>
+  <!-- Z-index -->
+  <div class="demo-box">
+    <h2>Z-index</h2>
+    <p>Властивість z-index визначає порядок накладання елементів. Елементи з більшим z-index відображаються зверху.
+    </p>
+    <div class="z-index-container">
+      <div class="z-box z-box-1">z-index: 1</div>
+      <div class="z-box z-box-2">z-index: 2</div>
+      <div class="z-box z-box-3">z-index: 3</div>
+    </div>
+  </div>
+  <!-- Fixed vs Sticky демонстрація -->
+  <div class="demo-box">
+    <h2>Порівняння Fixed vs Sticky</h2>
+    <div class="fixed-sticky-demo">
+      <div class="sticky-element">position: sticky - прокрутіть, щоб побачити ефект</div>
+      <div class="fixed-element">position: fixed</div>
+      <div class="demo-content">
+        <p>Прокрутіть цей контейнер, щоб побачити різницю між fixed та sticky позиціонуванням:</p>
+        <ul>
+          <li>Fixed елемент (рожевий) завжди залишається на одному місці відносно вікна браузера</li>
+          <li>Sticky елемент (фіолетовий) залишається на місці, поки не досягне верху, потім "прилипає"</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+      </div>
+    </div>
+  </div>
+  <p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+    dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+    takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+    diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+    accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+    dolor sit amet.
+
+    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu
+    feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+    delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+    sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea
+    commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+    illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent
+    luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+    Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer
+  </p>
+</body>
+
+</html>
