@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Overflow</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .container {
+      display: inline-block;
+      width: 200px;
+      height: 150px;
+      margin: 10px;
+      padding: 10px;
+      border: 2px solid #333;
+      background-color: #f5f5f5;
+      vertical-align: top;
+    }
+
+    .content {
+      width: 300px;
+      height: 250px;
+      background: linear-gradient(135deg, #e9f2ff 0%, #ffe7f2 100%);
+      padding: 10px;
+    }
+
+    .overflow-visible {
+      overflow: visible;
+      border-color: #e91e63;
+    }
+
+    .overflow-hidden {
+      overflow: hidden;
+      border-color: #2196f3;
+    }
+
+    .overflow-scroll {
+      overflow: scroll;
+      border-color: #4caf50;
+    }
+
+    .overflow-auto {
+      overflow: auto;
+      border-color: #ff9800;
+    }
+
+    .overflow-x-hidden {
+      overflow-x: hidden;
+      overflow-y: visible;
+      border-color: #9c27b0;
+    }
+
+    .overflow-y-scroll {
+      overflow-x: visible;
+      overflow-y: scroll;
+      border-color: #795548;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Навігаційне меню -->
+  <nav>
+    <ul>
+      <li><a href="../index.html">Блокові/Інлайнові</a></li>
+      <li><a href="normalize.html">Normalize</a></li>
+      <li><a href="reset.html">Reset</a></li>
+      <li><a href="display.html">Display</a></li>
+      <li><a href="float.html">Float</a></li>
+      <li><a href="overflow.html" class="active">Overflow</a></li>
+      <li><a href="position.html">Позиціонування</a></li>
+    </ul>
+  </nav>
+
+  <h1>Властивість CSS Overflow</h1>
+
+  <div class="demo-box">
+    <h2>overflow</h2>
+
+    <div class="container overflow-visible">
+      <p><strong>overflow: visible</strong></p>
+      <div class="content">
+        Дефолтне значення. Контент просто "вилазить" за межі і видно все. Може накладатись на інші елементи.
+      </div>
+    </div>
+    <div class="container overflow-hidden">
+      <p><strong>overflow: hidden</strong></p>
+      <div class="content">
+        Все, що не влазить в контейнер, обрізається і стає невидимим. Це може бути корисно для приховування переповненого контенту.
+      </div>
+    </div>
+
+    <div class="container overflow-scroll">
+      <p><strong>overflow: scroll</strong></p>
+      <div class="content">
+        Завжди показує смуги прокрутки, навіть якщо контент повністю влазить. Не дуже красиво, але прокрутка гарантована.
+      </div>
+    </div>
+
+    <div class="container overflow-auto">
+      <p><strong>overflow: auto</strong></p>
+      <div class="content">
+        Смуги прокрутки з'являються лише якщо вміст перевищує розмір контейнера.
+      </div>
+    </div>
+  </div>
+
+  <div class="demo-box">
+    <h2>overflow-x і overflow-y</h2>
+
+    <div class="container overflow-x-hidden">
+      <p><strong>overflow-x: hidden, overflow-y: visible</strong></p>
+      <div class="content">
+        Горизонтальне переповнення приховано, вертикальне - видиме.
+      </div>
+    </div>
+
+    <div class="container overflow-y-scroll">
+      <p><strong>overflow-x: visible, overflow-y: scroll</strong></p>
+      <div class="content">
+        Горизонтальне переповнення видиме, вертикальне має смугу прокрутки.
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
