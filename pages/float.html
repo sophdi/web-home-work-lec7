@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практика з float та clear</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .demo-box {
+      overflow: hidden;
+    }
+
+    .box {
+      background-color: #e0e0e0;
+      border: 2px solid #9e9e9e;
+      padding: 15px;
+      margin: 5px;
+      width: 150px;
+      height: 50px;
+      text-align: center;
+    }
+
+    .float-left {
+      float: left;
+      background-color: #bbdefb;
+      border-color: #1976d2;
+    }
+
+    .float-right {
+      float: right;
+      background-color: #c8e6c9;
+      border-color: #388e3c;
+    }
+
+    .clear-left {
+      clear: left;
+      background-color: #f8bbd0;
+      border-color: #c2185b;
+    }
+
+    .clear-right {
+      clear: right;
+      background-color: #d1c4e9;
+      border-color: #5e35b1;
+    }
+
+    .clear-both {
+      clear: both;
+      background-color: #ffe0b2;
+      border-color: #f57c00;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* для прикладу з картинками */
+    .picture {
+      max-width: 300px;
+    }
+
+    .fl {
+      float: left;
+      margin: 0 15px 15px 0;
+    }
+
+    .fr {
+      float: right;
+      margin: 0 0 15px 15px;
+    }
+
+    h3 {
+      background-color: rgb(191, 194, 255);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Навігаційне меню -->
+  <nav>
+    <ul>
+      <li><a href="../index.html">Блокові/Інлайнові</a></li>
+      <li><a href="normalize.html">Normalize</a></li>
+      <li><a href="reset.html">Reset</a></li>
+      <li><a href="display.html">Display</a></li>
+      <li><a href="float.html" class="active">Float</a></li>
+      <li><a href="overflow.html">Overflow</a></li>
+      <li><a href="position.html">Позиціонування</a></li>
+    </ul>
+  </nav>
+  <h1>Практика з float та clear</h1>
+  <div class="demo-box">
+    <h2>1. Використання float: left</h2>
+    <div class="box float-left">Блок 1 (float: left)</div>
+    <div class="box float-left">Блок 2 (float: left)</div>
+    <div class="box float-left">Блок 3 (float: left)</div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis magna at lacus commodo, non aliquam
+      nulla dapibus. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+      laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+      dicta sunt explicabo.
+    </p>
+  </div>
+  <div class="demo-box">
+    <h2>2. Використання float: right</h2>
+    <div class="box float-right">Блок 1 (float: right)</div>
+    <div class="box float-right">Блок 2 (float: right)</div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet purus ex. Vivamus euismod mauris
+      et enim laoreet, at ullamcorper ligula condimentum. Nulla facilisi. Praesent vel rutrum nisi, et faucibus
+      nisi.
+    </p>
+  </div>
+  <div class="demo-box">
+    <h2>3. Комбінування float: left та float: right</h2>
+    <div class="box float-left">Блок 1 (float: left)</div>
+    <div class="box float-right">Блок 2 (float: right)</div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis erat at nulla consectetur, in
+      interdum justo maximus. Sed dictum mauris vel luctus laoreet. Aliquam erat volutpat. Integer imperdiet
+      ligula non tellus luctus, eu varius lacus porttitor.
+    </p>
+  </div>
+  <div class="demo-box">
+    <h2>4. Використання clear: left</h2>
+    <div class="box float-left">Блок 1 (float: left)</div>
+    <div class="box float-left">Блок 2 (float: left)</div>
+    <div class="box clear-left">Блок 3 (clear: left)</div>
+    <p>
+      У цьому прикладі третій блок має clear: left, що прибирає обтікання зліва. Таким чином, третій блок
+      починається з нового рядка, під блоками з float: left.
+    </p>
+  </div>
+  <div class="demo-box">
+    <h2>5. Використання clear: right</h2>
+    <div class="box float-right">Блок 1 (float: right)</div>
+    <div class="box clear-right">Блок 2 (clear: right)</div>
+    <div class="box float-right">Блок 3 (float: right)</div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dignissim orci quis felis convallis, ac
+      varius tortor egestas. Integer placerat velit at orci rhoncus, ut tempus elit tempor.
+    </p>
+  </div>
+  <div class="demo-box">
+    <h2>6. Використання clear: both</h2>
+    <div class="box float-left">Блок 1 (float: left)</div>
+    <div class="box float-right">Блок 2 (float: right)</div>
+    <div class="box clear-both">Блок 3 (clear: both)</div>
+    <p>
+      Тут третій блок має clear: both, який прибирає обтікання з обох сторін. Це означає, що блок 3 починається з
+      нового рядка після всіх плаваючих блоків.
+    </p>
+  </div>
+  <div class="demo-box">
+    <h2>7. Проблема "схлопування" контейнера та її вирішення</h2>
+
+    <div style="border: 2px dashed #f44336; padding: 10px; margin-bottom: 60px;">
+      <div class="box float-left">float: left</div>
+      <p><b>Без clearfix.</b> Звичайний контейнер "схлопується" при використанні float блоків всередині.</p>
+    </div>
+
+    <div class="clearfix" style="border: 2px dashed #4caf50; padding: 10px;">
+      <div class="box float-left">float: left</div>
+      <div class="box float-left">float: left</div>
+      <p><b>Контейнер з класом clearfix</b> правильно охоплює плаваючі блоки.</p>
+    </div>
+  </div>
+  <!-- Новий приклад на основі index.html -->
+  <div class="demo-box">
+    <h2>8. Приклади обтікання тексту навколо зображень</h2>
+
+    <div class="clearfix">
+      <h3>Кіт 1</h3>
+      <img src="../images/img1.jpg" class="picture fl" alt="red cat">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque suscipit nulla sed lobortis.
+        Sed maximus elit nec posuere tempus. Sed ornare, ante quis vulputate efficitur, neque odio pharetra
+        quam, at iaculis sem nunc vitae nunc. Ut ornare pellentesque mollis. Sed venenatis est lacus, vel
+        faucibus mi volutpat ut. Mauris in tempus nulla. Mauris sem arcu, pretium id porttitor a, ullamcorper id
+        tortor. Nam placerat feugiat pellentesque. Donec enim diam, congue ac dui at, efficitur gravida odio.
+        Duis nec mollis nisi. Sed quis erat vestibulum, pulvinar dolor sit amet, mattis quam. In eget convallis
+        odio. Aliquam faucibus convallis nunc, sit amet interdum elit. Nam posuere efficitur lacus. Sed non dui
+        in diam posuere iaculis.
+      </p>
+      <p>Nullam sagittis lorem ut risus ultricies, finibus luctus enim rutrum. Integer luctus tincidunt magna, ac
+        tincidunt nisl rhoncus sed. Nulla eget nisi elementum, accumsan purus bibendum, imperdiet dui. In eu
+        sollicitudin sem, ut posuere neque. Aenean malesuada in enim sit amet tempor. Nunc leo sapien, commodo
+        quis tincidunt a, aliquam id metus. Praesent quis dolor mauris. Proin convallis iaculis rhoncus. Cras
+        varius tellus porttitor metus pretium, nec malesuada est tincidunt. Fusce dictum placerat lorem, vitae
+        ullamcorper urna tincidunt ut. Morbi id dui vitae libero finibus euismod. Maecenas vel vestibulum
+        turpis, sed commodo tellus. Quisque quis tincidunt augue.
+      </p>
+      <p>Etiam sed ultrices lectus. Sed posuere, sem ac ultricies luctus, ligula mi gravida sem, eu pulvinar
+        tortor urna eget erat. In hac habitasse platea dictumst. Proin quis turpis id nisi suscipit porttitor.
+        Suspendisse commodo interdum lacus vitae tempor. Aliquam finibus vehicula nunc et venenatis. Phasellus
+        et auctor ante, non volutpat dui. Sed placerat nisl orci, ut auctor nulla egestas sed. Suspendisse
+        suscipit convallis pellentesque. Pellentesque eget bibendum arcu.
+      </p>
+    </div>
+
+    <div class="clearfix">
+      <h3>Кіт 2</h3>
+      <img src="../images/img2.jpg" class="picture fr" alt="cat with glasses">
+      <p>Cras ut elit mauris. Maecenas sed ex id quam ornare rutrum non non lorem. Donec sed nulla molestie,
+        dictum velit vel, eleifend metus. Mauris tempus tincidunt purus non consectetur. Phasellus euismod ex
+        vitae blandit bibendum. Curabitur ultrices id eros in pretium. Phasellus aliquet condimentum
+        pellentesque. Nulla ligula metus, pretium vel condimentum finibus, tincidunt quis sapien. Nam posuere
+        lacus eu ante lacinia tristique. Sed venenatis arcu eros, sed commodo sem vehicula eu. Nulla tempor orci
+        vitae lacus porta, ac efficitur ligula elementum. Nunc lorem tortor, consectetur a vehicula eu,
+        ultricies eget justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+        curae; Praesent non dapibus erat.
+
+      </p>
+      <p>Necessitatibus ullam assumenda facere, mollitia eaque atque soluta inventore impedit eveniet placeat eos
+        sunt. Sed iste, obcaecati rerum voluptates vitae ipsa, deleniti quia a odio culpa itaque eum ducimus
+        numquam.</p>
+      <p>Sed odio ipsam ducimus tempore magni. Voluptatibus id non possimus natus similique. Quaerat vel deleniti
+        rerum consequuntur commodi tempora vitae reiciendis architecto nostrum magnam itaque, necessitatibus
+        debitis earum sint dolorum!</p>
+    </div>
+
+    <div class="clearfix">
+      <h3>Кіт 3</h3>
+      <img src="../images/img3.jpg" class="picture fl" alt="cat with coffee">
+      <p>Vero eum consectetur harum labore dolorum quaerat, pariatur odit maiores voluptatibus ratione dicta quas
+        adipisci aspernatur voluptas a, voluptatem esse, nesciunt repellendus repellat necessitatibus expedita
+        commodi amet cupiditate consequuntur! Ullam!</p>
+      <p>Dolores nobis adipisci, facilis minus sint consequatur laborum libero voluptates similique! Similique
+        quia sequi, culpa dolore veritatis voluptatibus nihil ipsam quod vitae a. Esse, exercitationem. Fuga
+        expedita ducimus vitae excepturi.</p>
+      <p>Repellat deserunt voluptates officiis ex impedit. Cum inventore numquam expedita odit distinctio hic
+        provident nesciunt, error aliquid voluptas, impedit aut ut, voluptatem quidem ea facilis sed. Impedit
+        magnam neque sint.</p>
+      <p>Quaerat incidunt fugiat blanditiis quos quis voluptates quas officiis quasi pariatur quisquam ducimus
+        qui, fugit dignissimos eaque tenetur et repellendus excepturi iusto, voluptate commodi alias. Sint
+        nostrum esse porro fugit!</p>
+    </div>
+  </div>
+</body>
+
+</html>
