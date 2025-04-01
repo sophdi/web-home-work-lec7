@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Normalize</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <style>
+    .block {
+      border: 2px solid red;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #ffeeee;
+    }
+
+    .inline {
+      border: 2px solid blue;
+      padding: 5px;
+      background-color: #eeeeff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Навігаційне меню -->
+  <nav>
+    <ul>
+      <li><a href="../index.html">Блокові/Інлайнові</a></li>
+      <li><a href="normalize.html">Normalize</a></li>
+      <li><a href="reset.html" class="active">Reset</a></li>
+      <li><a href="display.html">Display</a></li>
+      <li><a href="float.html">Float</a></li>
+      <li><a href="overflow.html">Overflow</a></li>
+      <li><a href="position.html">Позиціонування</a></li>
+    </ul>
+  </nav>
+
+  <h1>Блокові та Інлайнові Елементи</h1>
+
+  <h2>Блокові елементи</h2>
+  <div class="block">Це div - блоковий елемент, займає всю ширину</div>
+  <div class="block">Це теж div - починається з нового рядка</div>
+
+  <p class="block">Тег p - блоковий елемент. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pellentesque
+    suscipit nulla sed lobortis. Sed maximus elit nec posuere tempus. Sed ornare, ante quis vulputate efficitur, neque
+    odio pharetra quam, at iaculis sem nunc vitae nunc. Ut ornare pellentesque mollis.</p>
+  <h3 class="block">Заголовки h1-h6 - блокові елементи. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </h3>
+
+  <h2>Інлайнові елементи</h2>
+  <p>
+    Звичайний текст з <span class="inline">span - інлайновим елементом</span> всередині речення.
+    <span class="inline">Інлайнові елементи</span> розміщуються в тому ж рядку.
+  </p>
+
+  <p>
+    Інші інлайнові елементи:
+    <a href="#" class="inline">посилання</a>,
+    <strong class="inline">strong</strong>,
+    <em class="inline">em</em>,
+    <code class="inline">code</code>
+  </p>
+
+  <h2>Спроба задати ширину і висоту</h2>
+  <div style="width: 50%; height: 50px; background-color: #ffdddd; border: 1px solid red;">
+    Блоковий елемент - width: 50%, height: 50px працюють
+  </div>
+
+  <p>
+    Текст з <span style="width: 50%; height: 50px; background-color: #ddffdd; border: 1px solid green;">інлайновим
+      елементом</span>,
+    width і height не працюють для інлайнових елементів.
+  </p>
+
+  <h2>Margin для блокових і інлайнових</h2>
+  <div style="margin: 20px; background-color: #ffdddd; border: 1px solid red;">
+    Блоковий елемент з margin: 20px - працює з усіх сторін
+  </div>
+
+  <p>
+    Текст з <span style="margin: 20px; background-color: #ddffdd; border: 1px solid green;">інлайновим елементом</span>,
+    margin зверху і знизу не працюють для інлайнових елементів.
+  </p>
+
+  <h2>Padding для блокових і інлайнових</h2>
+  <div style="padding: 20px; background-color: #ffdddd; border: 1px solid red;">
+    Блоковий елемент з padding: 20px
+  </div>
+
+  <p>
+    Текст з <span style="padding: 20px; background-color: #ddffdd; border: 1px solid green;">інлайновим
+      елементом</span>,
+    padding працює з усіх сторін навіть для інлайнових елементів.
+  </p>
+</body>
+
+</html>
