@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px 30px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+nav {
+  padding: 10px;  
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+  gap: 10px; /*  рівномірні відступи між елементами */
+}
+
+nav li {
+  margin-right: 0;
+  margin-bottom: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 5px 10px;
+  color: #333;
+  border-radius: 15px;
+  border: 1px solid #050A44;
+  display: block;
+  text-align: center;
+  min-width: 80px;
+}
+
+nav a.active {
+  background-color: #050A44;
+  color: white;
+}
+
+nav a:hover {
+  background-color: #161e6f;
+  color: white;
+}
